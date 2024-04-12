@@ -1,0 +1,51 @@
+2.InterFace:
+
+model.1:
+interface Work{
+   public void PrintSystem();
+}
+class WorkOne implements Work{
+   public void PrintSystem(){
+        System.out.println("Logu");
+    }
+}
+class WorkTwo implements Work{
+   public void PrintSystem(){
+        System.out.println("Arrave");
+    }
+}
+class Main{
+    public static void main(String[] args){
+        Work Name =new WorkOne();
+        Name.PrintSystem();
+    }
+}
+ans:
+Logu
+
+model.2:
+class Logu{
+    public void Roll(){
+        System.out.print("Just a Person");
+    }
+}
+class Student extends Logu{
+    public void Roll(){
+        System.out.print("Learning on java");
+    }
+}
+class NormalPerson extends Logu{
+    public void Roll(){
+        System.out.print("Player");
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	    Logu myObj=new Logu();
+	    myObj.Roll();
+	}
+}
+ans:
+Just a person
+

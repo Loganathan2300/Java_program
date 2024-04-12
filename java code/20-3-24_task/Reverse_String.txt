@@ -1,0 +1,35 @@
+Revers String :
+
+model.1:
+public class Main
+{
+	public static void main(String[] args) {
+	    String name ="Mathan";
+	    String out ="";
+        for(int i=0;i<=name.length()-1;i++){
+            out=name.charAt(i)+out;
+        }
+            System.out.println(out);
+            
+	}
+}
+ans:
+nahtam
+
+model.2:
+public class Main
+{
+	public static void main(String[] args) {
+	    String name ="Mathan";
+	    String out ="";
+	    char Result;
+        for(int i=0;i<=name.length()-1;i++){
+            Result=name.charAt(i);
+            out = Result+out;
+        }
+            System.out.println(out);
+            
+	}
+}
+ans:
+nahtam

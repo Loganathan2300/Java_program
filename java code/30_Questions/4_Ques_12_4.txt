@@ -1,0 +1,142 @@
+/******************************************************************************
+
+Write a Java program to create a vehicle class hierarchy. The base class should be Vehicle,with subclasses Truck,
+Car and Motorcycle. Each subclass should have properties such as make, model, year, and fuel type.
+Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.           
+           
+           
+*******************************************************************************/
+abstract class Vehicle{
+    private String make;
+    private String model;
+    private int year;
+    private String fuel;
+    private double fueEfficiency;
+    
+    public Vehicle(String make,String model,int year,String fuel,double fueEfficiency){
+        this.make=make;
+        this.model=model;
+        this.year=year;
+        this.fuel=fuel;
+        this.fueEfficiency=fueEfficiency;
+    }
+    public String getMake(){
+        return make;
+    }
+    public String getModel(){
+        return model;
+    }
+    public int getYear(){
+        return year;
+    }
+    public String getFuel(){
+        return fuel;
+    }
+    public double getFueEfficiency(){
+        return fueEfficiency;
+    }
+    public abstract double calculateFuelEfficiency();
+
+    public abstract double calculateDistanceTraveled();
+
+    public abstract double getMaxSpeed();
+}
+class Truck extends Vehicle {
+    private double cargoCapacity;
+
+    public Truck(String make, String model, int year, String fuelType, double fuelEfficiency, double cargoCapacity) {
+        super(make, model, year, fuelType, fuelEfficiency);
+       this.cargoCapacity = cargoCapacity;
+    }
+   
+    public double getCargoCapacity() {
+        return cargoCapacity;
+    }
+    
+    public double calculateFuelEfficiency() {
+        return getFueEfficiency()*(1.0 / (1.0 + (getCargoCapacity() / 1000.0)));
+    }
+
+    public double calculateDistanceTraveled() {
+        return calculateFuelEfficiency() * getFueEfficiency();
+    }
+
+    public double getMaxSpeed() {
+        return 80.0;
+    }
+}
+class Car extends Vehicle{
+    private int Seats;
+    
+    public Car(String make,String model,int year,String fuel,double fueEfficiency,int Seats){
+        super(make,model,year,fuel,fueEfficiency);
+        this.Seats=Seats;
+    }
+    public int getNumSeats(){
+        return Seats;
+    }
+    public double calculateFuelEfficiency() {
+        return getFueEfficiency()*(1.0 / (1.0 + (getNumSeats() / 1000.0)));
+    }
+
+    public double calculateDistanceTraveled() {
+        return calculateFuelEfficiency() * getFueEfficiency();
+    }
+
+    public double getMaxSpeed() {
+        return 130.0;
+    }
+    
+}
+
+class Motorcycle extends Vehicle{
+    private int seat;
+    public Motorcycle(String make,String model,int year,String fuel,double fueEfficiency,int Seat){
+        super(make,model,year,fuel,fueEfficiency);
+        this.seat=Seat;
+    }
+    public int getSeat(){
+        return seat;
+    }
+    public double calculateFuelEfficiency() {
+        return getFueEfficiency()*(1.0 / (1.0 + (getSeat() / 1000.0)));
+    }
+
+    public double calculateDistanceTraveled() {
+        return calculateFuelEfficiency() * getFueEfficiency();
+    }
+
+    public double getMaxSpeed() {
+        return 89.0;
+    }
+    
+}
+
+public class Main{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+        // Vehicle vehicle = new Vehicle("TVS90","BQ-1983",2024,"GASOLINE",398.00);
+        // System.out.print("show the make name : "+vehicle.getMake());
+        // System.out.print("show the model name : "+vehicle.getModel());
+        // System.out.print("show the Year name : "+vehicle.getYear());
+        // System.out.print("show the Fuel name : "+vehicle.getFuel());
+        // System.out.print("show the Fuel name : "+vehicle.getFueEfficiency());
+        Truck truck = new Truck("Tatra", "Tatra 810 4x4", 2020, "GASOLINE", 8.112, 4.5);
+        System.out.println("Truck Model: " + truck.getModel());
+        System.out.println("Fuel Efficiency: " + truck.calculateFuelEfficiency() + " mpg");
+        System.out.println("Distance Traveled: " + truck.calculateDistanceTraveled() + " miles");
+        System.out.println("Max Speed: " + truck.getMaxSpeed() + " mph\n");
+        
+        Car car=new Car("Edios","edios-2018",2022,"GASOLINE",10.129,7);
+        System.out.println("Car Model: " + car.getModel());
+        System.out.println("Fuel Efficiency: " + car.calculateFuelEfficiency() + " mpg");
+        System.out.println("Distance Traveled: " + car.calculateDistanceTraveled() + " miles");
+        System.out.println("Max Speed: " + car.getMaxSpeed() + " mph\n");
+        
+        Motorcycle motorcycle=new Motorcycle("BMW","BMW-2018",2024,"GASOLINE",12.129,8);
+        System.out.println("Motorcycle Model: " + motorcycle.getModel());
+        System.out.println("Fuel Efficiency: " + motorcycle.calculateFuelEfficiency() + " mpg");
+        System.out.println("Distance Traveled: " + motorcycle.calculateDistanceTraveled() + " miles");
+        System.out.println("Max Speed: " + motorcycle.getMaxSpeed() + " mph\n");
+	}
+}

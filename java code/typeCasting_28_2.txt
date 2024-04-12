@@ -1,0 +1,57 @@
+TypeCasting:
+1.Widending casting:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       int number = 11;
+       double myDouble=number;
+       
+        System.out.print(myDouble);
+    }
+}
+model:2
+class datatype  {
+    public static void main(String[] args) {
+        float a=45.67f;
+       double mydouble=a;
+       
+        System.out.print(mydouble);
+    }
+}
+model:3
+class datatype  {
+    public static void main(String[] args) {
+        long a=45456;
+       double mydouble=a;
+       
+        System.out.print(mydouble);
+    }
+}
+2.Narrowing casting:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       double myDouble=89.789;
+        int number = (int)myDouble;
+       
+        System.out.print(number);
+    }
+}
+model:2
+class datatype  {
+    public static void main(String[] args) {
+       long myDouble=89456;
+        int number = (int)myDouble;
+       
+        System.out.print(number);
+    }
+}
+model:3
+class datatype  {
+    public static void main(String[] args) {
+       float myDouble=89.6f;
+        int number = (int)myDouble;
+       
+        System.out.print(number);
+    }
+}							

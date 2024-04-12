@@ -1,0 +1,53 @@
+Model.1:
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+  public static void main(String[] args) {
+    // char[] str_arra = {"A", "B", "D", "E"};
+    char[] str_arra = {'a', 'b', 'c', 'e'};
+    // char[] str_arra = {'p', 'r', 's', 't'};
+    System.out.print("Original array of elements:\n" + Arrays.toString(str_arra));
+    String result = test(str_arra);
+    System.out.printf("\nMissing letter in the said array: " + result);
+  }
+  public static String test(char[] str_arra) {
+    int c = str_arra[0] + 1;
+    for (int i = 1; i <= str_arra.length; i++, c++){
+      if (str_arra[i] != c){
+        return String.valueOf((char) c);
+      }
+    }
+    return "";
+  }
+}
+ans:
+Original array of elements:
+[a, b, c, e]
+Missing letter in the said array: d
+======
+Model.2:
+
+import java.util.Scanner;
+import java.util.Arrays;
+
+public class Main {
+  public static void main(String[] args) {
+    // String[] str_arra = {"A", "B", "D", "E"};
+    char[] str_arra = {'a', 'b', 'c', 'e'};
+    // char[] str_arra = {'p', 'r', 's', 't'};
+    System.out.print("Original array of elements:\n" + Arrays.toString(str_arra));
+
+    String result = test(str_arra);
+    System.out.printf("\nMissing letter in the said array: " + result);
+  }
+  public static String test(char[] str_arra) {
+    int c = str_arra[0] + 1;
+    for (int i = 1; i < str_arra.length; i++, c++){
+      if (str_arra[i] != c){
+        return String.valueOf((char) c);
+      }
+    }
+    return "";
+  }
+}

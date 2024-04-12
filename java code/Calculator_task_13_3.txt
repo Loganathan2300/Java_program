@@ -1,0 +1,78 @@
+model.1:(Calculator task)
+import java.util.Scanner;
+class ArrayTask {
+    public static void main(String[] args) {
+        Scanner scan=new Scanner(System.in);
+        System.out.println("Enter the Opration");
+        String OperationName=scan.next();
+        System.out.println("Enter the number1:");
+        int number1=scan.nextInt();
+        System.out.println("Enter the number2:");
+        int number2=scan.nextInt();
+        int result;
+        switch(OperationName){
+            case "+":
+                result =number1+number2;
+                System.out.println("Add the number :"+result);
+                break;
+                case "-":
+                     result=number1-number2;
+                    System.out.println("Sub the number :"+result);
+                    break;
+                    case "*":
+                         result=number1*number2;
+                    System.out.println("Mul the number :"+result);
+                    break;
+                    case "/":
+                         result=number1/number2;
+                        System.out.println("div the number :"+result);
+                        break;
+                        case "%":
+                             result=number1%number2;
+                            System.out.println("mod the number :"+result);
+                            break;
+                            default:
+                            System.out.println("please try '+-*%/'This operator");
+        }
+    }
+}
+
+model.2:
+import java.util.Scanner;
+class Calculator {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner (System.in);
+        System.out.print("Enter the operator:");
+        String OperatorName = scan.nextLine();
+        System.out.print("Enter The Numberstart:");
+        int numberStart = scan.nextInt();
+        System.out.print("Enter The Numberend:");
+        int numberEnd = scan.nextInt();
+        int result;
+        switch(OperatorName){
+            case "+":
+                result =numberStart+numberEnd;
+                System.out.println("Addition the number :"+result);
+                break;
+            case "-":
+                result = numberStart-numberEnd;
+                System.out.print("Subtraction the Number:"+result);
+                break;
+             case "*":
+               result = numberStart*numberEnd;
+                System.out.print("Multiplication the Number:"+result);
+                break;
+            case "/":
+               result = numberStart / numberEnd;
+                System.out.print("Division the Number:"+result);
+                break;
+            case "%":
+               result = numberStart%numberEnd;
+                System.out.print("Modulus the Number:"+result);
+                break;
+            default :
+                System.out.print("Enter valide");
+        }
+        
+    }
+}

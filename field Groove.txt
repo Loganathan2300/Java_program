@@ -1,0 +1,584 @@
+Field Groove:
+==============================================================
+login header:
+
+<div className="d-flex justify-content-between py-3">
+          <div>
+            <img
+              src={logo}
+              alt="Logo"
+              width="165"
+              height="29"
+              className="d-inline-block align-text-top"
+            />
+          </div>
+          <div>
+            <nav class="navbar navbar-expand-lg ">
+              <div class="container-fluid">
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarNavAltMarkup"
+                  aria-controls="navbarNavAltMarkup"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                  <div class="navbar-nav">
+                    <a class="nav-link" aria-current="page" href="#">
+                    FEATURES
+                    </a>
+                    <a class="nav-link" href="#">
+                    INDUSTRIES
+                    </a>
+                    <a class="nav-link" href="#">
+                    FAQS
+                    </a>
+                    <a class="nav-link " aria-disabled="true">
+                    FAQS
+                    </a>
+                    <a class="nav-link " aria-disabled="true">
+                      CONTACT US
+                    </a>
+                    <a class="nav-link " aria-disabled="true">
+                    SIGN UP
+                    </a>
+                    <a class="nav-link " aria-disabled="true">
+                    LOGIN
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+====================================================================================
+Login Body:
+
+<div className="container">
+            <div className="row d-flex ms-5 p-0">
+                <div className="col-sm-12 col-lg-4 p-0 m-0 ">
+                    <div className="card rounded-0 p-4 py-lg-5 " style={{backgroundColor:"#162647"}}>
+                        <h4 className="underline mb-3 text-white">SIGN IN</h4>
+                        <label htmlFor="" className="text-white">Email</label>
+                        <input type="text"  className="py-2"/>
+                        <label htmlFor="" className="mt-2 text-white">Password</label>
+                        <input type="text" className="p-2"/>
+                        <div class="form-check mt-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"/>
+                        <label class="form-check-label" for="flexCheckIndeterminate" className="text-white">
+                            Remember Me
+                        </label>
+                        </div>
+                        <div class="d-grid gap-2 d-md-block my-lg-4">
+                            <button class="btn btn-primary text-white p-2" style={{backgroundColor:"#162647"}} type="button">Forgot Password?</button>
+                            <button class="btn btn-danger mx-lg-3 text-white px-4 p-2" type="button">Sign In</button>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-12 col-lg-6 p-0 m-0">
+                    <div className="card rounded-0 p-4 py-lg-5 h-100" style={{backgroundColor:"#f2f5f8"}}>
+                        <h4 className="text-danger">NEED AN ACCOUNT?</h4>
+                        <p className="mt-4 fs-5">Create an account to start managing your company. Click the "Create New Account" button below to get started</p>
+                        <input className="btn btn-primary w-50 p-2" type="button" value="Create New Account"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+============================================================================================================================
+LoginLink:
+<div className="col-12">
+        <div className="d-flex justify-content-center py-5">
+            <h6 className=""> FEATURES | FAQS | CONTACT US | LOGIN | SIGN UP</h6>
+            </div>
+      </div>
+===========================================================================================================================
+LoginPage:
+<div className="d-flex justify-content-between w-100 " style={{backgroundColor:"#162647"}}>
+          <div>
+          <img
+              src={logoFooter}
+              alt="LogoFooter"
+              width="265"
+              height="49"
+              className="d-inline-block align-text-top mt-5"
+            />
+            <p className="text-white">Copyright © FieldGroove, LLC 2024. All Rights Reserved.716 Newman Springs Road, Suite 307 Lincroft, NJ 07738</p>
+            <a href="#">private policy</a>
+          </div>
+          <div className="py-5">
+            <p className="text-white">We would love to show you the power of FieldGroove. To setup
+                 a demo or get an account setup, please contactS us at</p>
+                 <a href="#">sales@fieldgroove.com</a><span>or by phone at</span><a href="#">212-537-0218</a>
+          </div>
+        </div>
+
+======================================
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+// import bg from "../../../assets/Image/bg.png";
+import { LoginAction } from "../../../redux/action/LoginAction";
+import { Spinner } from "react-bootstrap";
+import { ToastContainer } from "react-toastify";
+// import { toast } from 'react-toastify';
+import { CONSTANT } from "../../../constant/Index";
+import "../../../assets/Css/App.css";
+import "react-toastify/dist/ReactToastify.css";
+import { InputTag } from "../../InputTag/InputTag";
+import Button from "../../Button/Button";
+const LoginBody = () => {
+  // set the Spinner
+  const spinnerLoder = useSelector((state) => state.Loginstore.LoginModel.loading);
+  const navicate = useNavigate();
+  const dispacth = useDispatch();
+  const handleLogin = (formData, e) => {
+    e.preventDefault();
+    dispacth(
+      LoginAction({
+        Email: formData.Email,
+        Password: formData.Password,
+        navicate,
+      }));  
+    // toast.success('LogIn Successfully',{
+    //   position: "top-right",
+    //   autoClose: 5000,
+    //   hideProgressBar: false,
+    //   closeOnClick: true,
+    //   pauseOnHover: true,
+    //   draggable: true,
+    //   progress: undefined,
+    //   theme: "light",
+    //   })
+  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }} = useForm();
+  // console.log(errors);
+  // console.log(LoginAction,"logu summa")
+  return (
+   <div className="container p-0">
+      <div className="row mx-lg-5 px-lg-4 p-0 BodyLog mx-1">
+        <div className="col-sm-4 col-lg-4 p-0 m-0">
+          <div className="card rounded rounded-start p-4 px-4 colorBg">
+            <h4 className="mb-4 text-white sign">{CONSTANT.SIGN_IN}</h4>
+            <form onSubmit={handleSubmit(handleLogin)}>
+              <ToastContainer />
+              <label htmlFor="" className="text-white ">
+                {CONSTANT.EMAIL}
+              </label>
+              <InputTag
+                type="text"
+                className="form-control my-1 p-2"
+                id="Email"
+                placeholder="Email"
+                name="Email"
+                register={register}
+                required={{
+                  required: "The Email field is required",
+                  pattern: {
+                    value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                    message: "Invalid email address",
+                  },
+                }}
+              />
+              {errors?.Email && (
+                <p className="text-danger">{errors.Email.message}</p>
+              )}
+              <label htmlFor="" className=" text-white">
+                {CONSTANT.PASSWORD}
+              </label>
+              <InputTag
+                type="password"
+                className="form-control my-1 p-2"
+                id="Email"
+                placeholder="Password"
+                name="Password"
+                register={register}
+                required={{
+                  required: "The Password field is required.",
+                  minLength: {
+                    value: 5,
+                    message: "Minimum 5 characters expected",
+                  },
+                }}
+              />
+              {errors?.Password && (
+                <p className="text-danger">{errors.Password.message}</p>
+              )}
+              <div className="form-check mt-3">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  value=""
+                  id="flexCheckIndeterminate"
+                />
+                <label
+                  className="form-check-label text-white"
+                  htmlFor="flexCheckIndeterminate"
+                >
+                  {CONSTANT.REMEMBER_ME}
+                </label>
+              </div>
+              {/* <div className="d-grid gap-2 d-md-flex justify-content-md-start justify-content-lg-between align-items-center my-lg-3 mt-2 mt-sm-0">
+                <Button
+                  className="btn text-white p-2 border-0 border-light colorBg me-2 px-5 w-100 px-sm-0 w-sm-0"
+                  type="button"
+                  buttonName={CONSTANT.FORGOT_PASSWORD}
+                />
+                <Button
+                  className="btn text-white p-2 px-5 w-100 w-sd-0 SubmitColor"
+                  type="submit"
+                  id="submit"
+                  disabled={spinnerLoder}
+                  buttonName={
+                    <>
+                      {CONSTANT.SIGN_IN}
+                      {spinnerLoder && (
+                        <Spinner
+                          animation="border"
+                          variant="light"
+                          size="sm"
+                          className="ms-2"
+                        />
+                      )}
+                    </>
+                  }
+                />
+                <button className="btn text-white p-2 px-5 w-100 w-sd-0 SubmitColor" type="submit" id="submit"
+                  disabled={spinnerLoder}>
+                    {CONSTANT.SIGN_IN}{spinnerLoder ?<Spinner animation="border" variant="light"  size="sm"className="ms-2"/>:<></>}</button>
+              </div> */}
+              <div class="d-grid gap-2 d-md-block my-lg-3 mt-2 mt-sm-0">
+              <button
+                class="btn text-white p-2 border border-light"
+                style={{ backgroundColor: "#162647" }}
+                type="button"
+              >
+                {CONSTANT.FORGOT_PASSWORD}
+              </button>
+              <button
+                class="btn mx-xl-2 mx- text-white px-4 p-2 px-sm-5 px-lg-4 my-sm-2 "
+                style={{ backgroundColor: "#e36156" }}
+                type="submit"
+                id="submit"
+                disabled={spinnerLoder}  
+              >
+                {CONSTANT.SIGN_IN}
+                {spinnerLoder?<Spinner  animation="border" variant="light" size="sm" className="ms-3" />:<></>}
+              </button><br />
+            </div>
+            </form>
+          </div>
+        </div>
+        <div className="col-sm-8 col-lg-6 p-0 my-2 my-sm-0">
+          <div className="rounded-end p-4 py-lg-5 h-100 BackgroundImage">
+            <h4 className="fs2 textColor">{CONSTANT.NEED_AN_ACCOUNT}</h4>
+            <p className="mt-lg-4 fs1 mb-lg-5">{CONSTANT.CREATE_NEW_ACCOUNT}</p>
+            <Link to="/signup-page" className="nav-link fs mx-xl-3 ">
+              <input
+                className="btn text-white w-50 fs py-2 button colorBg"
+                type="button"
+                value="Create New Account"
+              />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginBody;
+===========================================================================
+Dashboard header in react bootstap
+
+  {/* <nav class="navbar navbar-expand-lg bg-primary">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <Link class="navbar-brand" to="/ds">                   
+                           <img
+                            src={logo}
+                            alt="Logo"
+                            width="100"
+                            height="24"
+                            className="d-inline-block align-top"
+                            /></Link>
+          <ul class="navbar-nav me-auto mb- mb-lg-0">
+            <li class="nav-item">
+              <Link class="nav-link text-white" aria-current="page" to="/ds">Leads</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link text-white" to="/ds">Opportunities</Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link text-white" aria-disabled="true">Jobs</Link>
+            </li>
+            <li className="nav-item">
+                      <NavDropdown
+                        title="Accounting"
+                        id="navbarScrollingDropdown"
+                        className="fs "
+                      >
+                        <NavDropdown.Item href="#action3" className="hover text-white">
+                          {DROPDOWN.FLOORING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action4" className="hover text-white">
+                          {DROPDOWN.ROOFING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.DRYWALL_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.INSULATION_NAME}
+                        </NavDropdown.Item>
+                      </NavDropdown>
+            </li>
+            <li className="nav-item">
+                      <NavDropdown
+                        title="Customers"
+                        id="navbarScrollingDropdown"
+                        className="fs"
+                      >
+                        <NavDropdown.Item href="#action3" className="hover text-white">
+                          {DROPDOWN.FLOORING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action4" className="hover text-white">
+                          {DROPDOWN.ROOFING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.DRYWALL_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.INSULATION_NAME}
+                        </NavDropdown.Item>
+                      </NavDropdown>
+            </li>
+            <li className="nav-item">
+                      <NavDropdown
+                        title="Inventory"
+                        id="navbarScrollingDropdown"
+                        className="fs"
+                      >
+                        <NavDropdown.Item href="#action3" className="hover text-white">
+                          {DROPDOWN.FLOORING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action4" className="hover text-white">
+                          {DROPDOWN.ROOFING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.DRYWALL_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.INSULATION_NAME}
+                        </NavDropdown.Item>
+                      </NavDropdown>
+            </li>
+            <li className="nav-item">
+                      <NavDropdown
+                        title="Dispatcher"
+                        id="navbarScrollingDropdown"
+                        className="fs mx-xl-3"
+                      >
+                        <NavDropdown.Item href="#action3" className="hover text-white">
+                          {DROPDOWN.FLOORING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action4" className="hover text-white">
+                          {DROPDOWN.ROOFING_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.DRYWALL_NAME}
+                        </NavDropdown.Item>
+                        <NavDropdown.Item href="#action5" className="hover text-white">
+                          {DROPDOWN.INSULATION_NAME}
+                        </NavDropdown.Item>
+                      </NavDropdown>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control" type="search" placeholder="Search" aria-label="Search"/>
+          </form>
+          <Icon icon="radix-icons:avatar" className="hight1"/>
+          <h5 to='#' className='mb-1'>Loganathan</h5>
+        </div>
+      </div>
+    </nav> */}
+===========================================================================================
+api redux:
+
+
+
+// import axios from "axios"
+// import { Login } from "../constant/Index";
+// import { BASE_URL } from "../../constant/Index";
+// export const LoginAction = (payload)=> async (dispatch)=>{
+//     dispatch({
+//         type:Login.LOADING,
+//         payload:{loading:true},
+//     });
+//     // console.log(payload.navicate,"cjvcjhdsvjsdvjg");
+//     try {
+//         const  {data} = await axios.post(`${BASE_URL}/api/users/login`, {Email:payload.Email,Password:payload.Password});
+//         payload.navicate("/login-page")
+//         localStorage.setItem("token", data.accessToken);
+//         await dispatch({
+//             type: Login.SUCCESS,
+//             payload: { loading: false, data: data },
+//         });
+//     } catch (err) {
+//         await dispatch({
+//             type: Login.ERROR,
+//             payload: { loading: false, data: {} },
+//         });
+//     }
+// }
+=================================================================================
+// const LoginFooter = () => {
+//   return (
+//     <div className="d-flex justify-content-between align-items-center p-4"style={{ backgroundColor: "#162647" }}>
+//       <div className=" my-3 mb-0">
+//         <img
+//           src={logoFooter}
+//           alt="LogoFooter"
+//           width="265"
+//           height="49"
+//           className="d-inline-block align-text-top mx-xl-5 "
+//         />
+//         <p className="text-secondary fs3 px-xl-5 mt-xl-2 mb-1">Copyright © FieldGroove, LLC 2024.</p>
+//         <p className="text-secondary fs3 px-xl-5 mb-0">All Rights Reserved.716 Newman Springs Road, 
+//         Suite 307 Lincroft, NJ 07738</p>
+//         <Link href="#" className="px-xl-5 fs3 text-danger"> private policy </Link>
+//       </div>
+//       <div className=" my-xl-5 me-xl-3 my-sm-5 me-sm-4">
+//         <p className="text-secondary fs3 mt-xl-3 mb-1"> We would love to show you the power of FieldGroove </p>
+//         <p className="text-secondary fs3 me-xl-5 mb-0">To setup a demo or get an account setup, please contact us at</p>
+//         <Link href="#" className="fs3 text-danger">sales@fieldgroove.com</Link>
+//         <span className="text-secondary fs3">or by phone at</span>
+//         <Link href="#" className="fs3 text-danger">212-537-0218</Link>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default LoginFooter;
+================================================
+
+
+    // <div className="">
+    //   <div className="row mx-0">
+    //     <div className="col-12 d-flex flex-column flex-md-row justify-content-between py-3 bg-body-secondary">
+    //       <div className="text-center">
+    //         <h3>Leads</h3>
+    //       </div>
+    //       <div className="d-flex flex-column flex-md-row text-center">
+    //         {LEADS_HEADER&&LEADS_HEADER.map((item)=>(
+    //             <div>
+    //             <Button
+    //               type="button"
+    //               buttonName={item.name}
+    //               className={item.id===1?"rounded-2 text-white bg-info px-4 px-lg-3 py-lg-1 my-1 my-sm-0 fs6": item.id === 2 ? " mx-lg-2 rounded-2 text-white bg-info px-4 px-lg-4 py-lg-1 fs6":" mx-lg-2 rounded-2 text-white bg-info px-5 px-lg-4 py-lg-1 fs6"}
+    //             />
+    //           </div>
+    //         ))}
+    //       </div>
+    //     </div>
+    //     <div className='row my-2 mx-2'>
+    //         <div className='col-3 card '>
+    //           <input type="text" placeholder='Search leads...' className='mt-4 mb-2 px-4 fs6'/>
+    //           <div className="dropdown py-1">
+    //             <button className="btn border border-dark-subtle dropdown-toggle w-100 pe-lg-5 fs6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    //              Select an Action...
+    //             </button>
+    //             <ul className="dropdown-menu">
+    //               <li><Link className="dropdown-item" to="#">Action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Another action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Something else here</Link></li>
+    //             </ul>
+    //           </div>
+    //           <div className="dropdown py-1">
+    //             <button className="btn border border-dark-subtle dropdown-toggle w-100 pe-lg-5 fs6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    //               Select a Status...
+    //             </button>
+    //             <ul className="dropdown-menu">
+    //               <li><Link className="dropdown-item" to="#">Action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Another action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Something else here</Link></li>
+    //             </ul>
+    //           </div>
+    //           <div className="dropdown py-1">
+    //             <button className="btn border border-dark-subtle dropdown-toggle w-100 fs6" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    //               Select an SalesPersons...
+    //             </button>
+    //             <ul className="dropdown-menu">
+    //               <li><Link className="dropdown-item" to="#">Action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Another action</Link></li>
+    //               <li><Link className="dropdown-item" to="#">Something else here</Link></li>
+    //             </ul>
+    //           </div>
+    //           <div className="form-check mt-1">
+    //             <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
+    //             <label className="form-check-label fs6" for="flexCheckDefault">Default checkbox</label>
+    //           </div>
+    //           <div className='mb-3 mt-2'>
+    //             <button type="button" className="btn btn-light px-4 mx-2 fs6"><Icon icon="bxs:file-export" />Export</button>
+    //             <button type="button" className="btn btn-info px-4 fs6">Filter</button>
+    //           </div>
+    //         </div>
+    //         <div className='col-8 card ms-3'>dsdksfk</div>
+    //     </div>
+    //   </div>
+    //   <div className="py-2 mx-sm-3">
+    //     {/* <h5>{DASHBOARD_PAGE?.MAINTENANCE}</h5> */}
+    //   </div>
+    // </div>
+
+
+
+
+
+=========================================================
+
+
+/******************************************************************************
+
+Create a Java program to define a class named "Student" with the following
+attributes: name, grade, and courses.
+Implement methods to add a course and remove a course from the student's list of courses.
+
+*******************************************************************************/
+import java.util.Arrays;
+
+public class Student{
+    String name ="Vijay";
+    String grade = "A";
+    String[] courses ={"B.com","MBA","BCA"};
+    
+    public <T> T[] addCourse(T[] courses,T course){
+      T[] array = Arrays.copyOf(courses, courses.length + 1);
+      array[courses.length] = course;
+      return array;
+    }
+    
+    public <F> F[] removeCourse(){
+      F[] remove=addCourse.remove(-1);
+        return remove;
+    }
+    
+	public static void main(String[] args) {
+		Student myObj=new Student();
+// 		System.out.println(myObj.name);
+		String[] output=myObj.addCourse(myObj.courses,"name");
+		for(int i=0;i<output.length;i++){
+		   System.out.println(output[i]);
+		}
+// 		System.out.println(myObj.removeCourse);
+	}
+}

@@ -1,0 +1,115 @@
+array:
+1)model.1(array add the multiarray)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        for(int i=0;i<=2;i++){
+            for(int j=0;j<=2;j++){
+                System.out.print(multiArray[0][i]+multiArray[1][j]); 
+            }
+            System.out.println("");
+        }
+    }
+}
+Ans:(1+1,1+2,1+3,2+1,2+2,2+3........ format)
+567
+678
+789 
+
+1.1)model.2:
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray = {{1,2,3},{4,5,6}};
+        for(int i = 0; i < multiArray[0].length; i++) {
+            for(int j = 0; j < multiArray[1].length; j++) {
+                System.out.print(multiArray[0][i]+multiArray[1][j]); 
+            }
+             System.out.println(""); 
+        }
+    }
+}
+Ans:(1+1,1+2,1+3,2+1,2+2,2+3........ format)
+567
+678
+789   
+
+2)model.2(array add the multiarray store the array variable)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        int a[]=new int[3];
+        for(int i=0;i<=2;i++){
+            for(int j=0;j<=2;j++){
+                a[i]=multiArray[0][i]+multiArray[1][j];
+                System.out.print(a[i]); 
+            }
+            System.out.println("");
+        }
+    }
+}
+Ans:(1+1,1+2,1+3,2+1,2+2,2+3........ format)
+567
+678
+789
+
+
+=================================================================================================================
+model:(Store the array and call it)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        int arr[]= new int[3];
+        for(int i=0;i<=2;i++){
+                arr[i] = multiArray[0][i] + multiArray[1][i];
+                System.out.print(arr[i]);
+        }
+    }
+}
+ans:
+5
+model.1:(format on 1+1,1+2,1+3,2+1,2+2,2+3.......)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        for(int i=1;i<=3;i++){
+            for(int j=1;j<=3;j++){
+                 System.out.print(i+"logu");
+                 System.out.println(j+"s");  
+            }
+        }
+    }
+}
+model.2:
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        int arr[]= new int[3];
+        for(int i=0;i<=2;i++){
+                arr[i] = multiArray[0][i] + multiArray[1][i];
+                System.out.print(arr[i]);
+        }
+    }
+}
+
+model.3(array add the multiarray)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        for(int i=0;i<=2;i++){
+                System.out.print(multiArray[0][i] + multiArray[1][i]);
+        }
+    }
+}
+model.4:(array add the multiarray store the variable)
+class HelloWorld {
+    public static void main(String[] args) {
+        int[][] multiArray={{1,2,3},{4,5,6}};
+        int arr[]= new int[3];
+        for(int i=0;i<=2;i++){
+                arr[i] = multiArray[0][i] + multiArray[1][i];
+                System.out.print(arr[i]);
+        }
+    }
+}
+
+

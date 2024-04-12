@@ -1,0 +1,43 @@
+/******************************************************************************
+
+            Develop a Java program to define a class named "Person" with private instance 
+            variables: name, age, and country. Implement public getter and
+            setter methods to access and modify these variables.
+*******************************************************************************/
+
+ class Person{
+    private String name;
+    private int age;
+    private String country;
+    
+    public String getName(){
+    return name;
+   }
+   public void setName(String newName) {
+    this.name = newName;
+  }
+  public int addAge(){
+      return age;  
+    }
+  public void setAge(int age){
+      this.age=age;
+  }
+  public String getCountry(){
+      return country;
+  }
+  public void setCourenty(String newCountry){
+    this.country=newCountry;   	
+  }
+  
+}
+public class Main{
+	public static void main(String[] args) {
+	Person myObj = new Person();
+    myObj.setName("John");
+    System.out.println("this is name  : "+myObj.getName());
+    myObj.setCourenty("india");
+    System.out.println("country name : "+myObj.getCountry());
+    myObj.setAge(22);
+    System.out.println("current Age : "+myObj.addAge());
+	}
+}

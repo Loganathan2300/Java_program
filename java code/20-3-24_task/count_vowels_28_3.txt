@@ -1,0 +1,33 @@
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        Scanner myObj=new Scanner(System.in);
+        System.out.print("Enter the text:");
+        String word = myObj.nextLine();
+        int aCount = 0, eCount = 0, iCount = 0, oCount = 0, uCount = 0;
+        word = word.toLowerCase();
+        for (int i = 0; i < word.length(); i++){
+            char ch = word.charAt(i);
+            if (ch == 'a'){
+            aCount++;
+            }
+            else if (ch == 'e'){
+            eCount++;
+            } 
+            else if (ch == 'i'){
+            iCount++;
+            }
+            else if (ch == 'o'){
+            oCount++;
+            } 
+            else if (ch == 'u'){
+            uCount++;
+            }
+        }
+    System.out.println("Count of 'a': " + aCount);
+    System.out.println("Count of 'e': " + eCount);
+    System.out.println("Count of 'i': " + iCount);
+    System.out.println("Count of 'o': " + oCount);
+    System.out.println("Count of 'u': " + uCount);
+    }
+}

@@ -1,0 +1,30 @@
+swap Method:
+mode.1:
+public class Main
+{
+	public static void main(String[] args) {
+        int a=10,b=20;
+        a=(a*b)/(b=a);
+        System.out.println(a);
+        System.out.println(b);
+	}
+}
+ans:
+20
+10
+
+model.2:
+public class Main
+{
+	public static void main(String[] args) {
+        int a=10,b=20;
+        a=a+b;
+        b=a-b;
+        a=a-b;
+        System.out.println(a);
+        System.out.println(b);
+	}
+}
+ans:
+20
+10

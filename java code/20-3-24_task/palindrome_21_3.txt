@@ -1,0 +1,44 @@
+1.palindrome 
+
+model.1:
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner myobj=new Scanner (System.in);
+	    System.out.println("Enter the String");
+	    String name = myobj.nextLine();
+	    String out ="";
+	    char Result;
+        for(int i=0;i<=name.length()-1;i++){
+            Result=name.charAt(i);
+            out = Result+out;
+        }
+        System.out.println(out);
+            if(name.equals(out)){
+                System.out.println("Palintrome");
+            }else{
+                System.out.println("Not a Palintrome");
+            }
+            
+	}
+}
+
+model.2:
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+        String name = "amm";
+        String result="";
+        for(int i=0;i<=name.length()-1;i++){
+            result=name.charAt(i)+result;
+        }
+        if(name.equals(result)){
+        System.out.println("result");
+        }else{
+            System.out.println("jhdcbsdjhcb");
+        }
+	}
+}

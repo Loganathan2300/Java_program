@@ -1,0 +1,85 @@
+for loop:
+model.1:
+class patten {
+    public static void main(String[] args) {
+        for(int i=0;i<5;i++){
+            for(int j=0;j<=i;j++){
+               System.out.print("*");
+            }
+        System.out.println(" ");
+        }
+    }
+}
+model.2:
+class patten {
+    public static void main(String[] args) {
+        for(int i=1;i<=5;i++){
+            for(int j=1;j<=i;j++){
+              System.out.print("*");
+            }
+        System.out.println(" ");
+        }
+    }
+}
+model.3:
+class patten {
+    public static void main(String[] args){
+        for(int i=1;i<=5;i++){
+            for(int j=5;j>=i;j--){
+              System.out.print("*");
+            }
+        System.out.println(" ");
+        }
+    }
+}
+model.4:
+class patten1 {
+    public static void main(String[] args) {
+        int data[]={1,22,333,4444,55555};
+        for(int i:data){
+            System.out.println(i);
+        }
+        }
+        }
+output:
+1
+22
+333
+4444
+55555
+
+model.5:
+class patten {
+    public static void main(String[] args) {
+        for (int i=1;i<=5;i++){
+            for (int j=1;j<=i;j++){
+            System.out.print(i);
+            }
+              System.out.println(" ");
+        }
+    }
+}
+ans:
+1 
+22 
+333 
+4444 
+55555 
+
+model.6:
+class patten {
+    public static void main(String[] args) {
+        for (int i=5;i>=1;i--){
+            for (int j=1;j<=i;j++){
+            System.out.print(i);
+            }
+              System.out.println(" ");
+        }
+    }
+}
+ans:
+55555 
+4444 
+333 
+22 
+1 

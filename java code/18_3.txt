@@ -1,0 +1,52 @@
+method and parameters:
+...... ... ...........
+
+model.1:
+class HelloWorld {
+    static void name(){
+        System.out.println("VLN");
+    }
+    public static void main(String[] args) {
+        name();
+    }
+}
+ans:
+VLN
+
+model.2:
+class HelloWorld {
+    static void name(String fname){
+        System.out.println(fname+"VLN");
+    }
+    public static void main(String[] args) {
+        name("logu");
+        name("arrave");
+        name("thisanth");
+    }
+}
+ans:
+loguVLN
+arraveVLN
+thisanthVLN
+
+model.3:
+pass 2 args:
+
+class HelloWorld {
+    static void name(String fname,int age){
+        System.out.println(fname+" "+age);
+    }
+    public static void main(String[] args) {
+        name("logu",24);
+        name("arrave",5);
+        name("thisanth",1);
+    }
+}
+ans:
+logu 24
+arrave 5
+thisanth 1
+
+
+
+

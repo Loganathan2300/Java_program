@@ -1,0 +1,50 @@
+/******************************************************************************
+
+Develop a Java program to define a class named "Car" with private instance 
+variables: company_name, model_name, year, and mileage. Provide public getter and
+setter methods for company_name, model_name, and year.
+Only include a getter method for the mileage variable.
+
+*******************************************************************************/
+class Car{
+    private String company_name;
+    private String model_name;
+    private int year;
+    private double mileage;
+    
+    public String getCompany_name(){
+        return company_name;
+    }
+    public void setCompany_name(String name){
+        this.company_name=name;
+    }
+    public String getModel_name(){
+        return model_name;
+    }
+    public void setModel_name(String name){
+        this.model_name=name;
+    }
+    public int getYear(){
+        return year;
+    }
+    public void setYear(int year){
+        this.year=year;
+    }
+    public double getmileage(){
+        return mileage;
+    }
+}
+
+public class Main{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+		Car myObj= new Car();
+		myObj.setCompany_name("FTS");
+		myObj.setModel_name("Technology");
+		myObj.setYear(2024);
+		System.out.println(myObj.getCompany_name());
+		System.out.println(myObj.getModel_name());
+		System.out.println(myObj.getYear());
+		System.out.println(myObj.getmileage());
+	}
+}

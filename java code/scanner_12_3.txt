@@ -1,0 +1,44 @@
+Scanner new method:
+step.1:
+
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner na = new Scanner(System.in);
+        String firstName,lastName,gender;
+        System.out.println("Enter your FirstName:");
+        firstName=na.nextLine();
+        System.out.println("Enter your LirstName:");
+        lastName=na.nextLine();
+        System.out.println("Enter your Gender:");
+        gender=na.nextLine();
+        System.out.println("FirstName is: " + firstName);
+        System.out.println("LirstName is: " + lastName); 
+        System.out.println("Gender is: " + gender); 
+    }
+}
+ans:
+Enter your FirstName:
+loganathan
+Enter your LirstName:
+Swathi
+Enter your Gender:
+male
+FirstName is: loganathan
+LirstName is: Swathi
+Gender is: male
+
+model.2:
+import java.util.Scanner;
+class HelloWorld {
+    public static void main(String[] args) {
+        Scanner a=new Scanner(System.in);
+        System.out.print("Enter the number of rows: "); 
+        int n=a.nextInt();
+        int na=a.nextInt();
+        int nam=a.nextInt();
+        int array[]={n,na,nam};
+        System.out.println(array[2]);
+        
+    }
+}

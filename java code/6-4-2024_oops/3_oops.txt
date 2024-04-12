@@ -1,0 +1,26 @@
+/******************************************************************************
+Design a Java program to create an interface named "Animal" with a method bark() that prints a sound. 
+Implement a class named "Dog" that implements the Animal interface and
+overrides the bark() method to print "Dog is barking."
+
+*******************************************************************************/
+ interface Animal{
+    public void bark();
+    default void dogSound(){
+        System.out.println("sound");
+    }
+}
+class Dog implements Animal{
+    public void bark(){
+        System.out.println("Dog is barking.");
+    }
+}
+
+public class Main{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+		Animal myObj=new Dog();
+		myObj.dogSound();
+		myObj.bark();
+	}
+}

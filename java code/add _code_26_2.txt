@@ -1,0 +1,66 @@
+1.Add tha 4 number by using addition operartor:
+
+step:1
+// public class Add{
+//     public static void main(String arug[]){
+//         int number = 1+1+3+5;
+//         System.out.println("sum:"+number);
+//     }
+// }
+
+step:2
+public class Adds{
+    public static void main(String arg[]){
+        int number = 5;
+        int number2 = 3;
+        int number3 = 2;
+        System.out.println("sum of:"+ (number+number2+number3));
+    }
+}
+
+step:3
+public class Adds{
+    public static void main(String arg[]){
+        int number = 5;
+        int number2 = 3;
+        int number3 = 2;
+        int total = number+number2+number3;
+        System.out.println("sum of:"+ total);
+    }
+}
+
+step:4
+public class Adds{
+    public static void main(String arg[]){
+        System.out.println("sum of:"+ (2+3+5));
+    }
+}
+-----------------------------------------------------------------------------------------------------------------------
+new method :
+** step:1
+public class Adds{
+    public static void main(String arg[]){
+        System.out.println("sum of:"+ (2+3+5));
+        add(3456);
+    }
+    public static void add(int arg,String agr){
+        System.out.println( arg);
+    }
+}
+
+**step:2
+public class Adds{
+    
+    int number = 4 ;
+    
+    public static void main(String arg[]){
+        // int a=56
+        System.out.println("sum of:"+ (2+3+5));
+        Adds adds = new Adds();   //this method object
+        adds.add(345);    //how  to call it name
+        System.out.print(adds.number);
+    }
+     void add(int arg){
+        System.out.println( arg);
+    }
+}

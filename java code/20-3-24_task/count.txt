@@ -1,0 +1,40 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+        Scanner input = new Scanner(System.in);
+        System.out.println("hvjdsvcjs");
+        String count =input.nextLine();
+        int a=count.length();
+        // for(int i=1;i<count.length()+1;i++){
+        // System.out.println(i);
+        // }
+        System.out.println(a);
+	}
+}
+============================
+
+import java.util.Scanner;  
+public class CountOccuranceOfChar1  
+{  
+public static void main(String args[])   
+{  
+String str;  
+int i, len;  
+int counter[] = new int[256];  
+Scanner scanner = new Scanner(System.in);  
+System.out.print("Please enter a string: ");  
+str = scanner.nextLine();
+len = str.length();  
+// loop through the string and count frequency of every character and store it in counter array  
+for (i = 0; i < len; i++){  
+     counter[(int) str.charAt(i)]++;  
+}  
+for (i = 0; i < 256; i++){  
+    if (counter[i] != 0){
+         System.out.println((char) i + " --> " + counter[i]);  
+    }  
+}  
+}  
+}  

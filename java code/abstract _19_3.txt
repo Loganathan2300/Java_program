@@ -1,0 +1,101 @@
+1.abstract :
+model.1:
+abstract class Student{
+    String name="Logu";
+    int Age=24;
+    public abstract void study();
+}
+class StudentDetails extends Student{
+    int year=2000;
+    public void study() {
+        System.out.println("VCF");
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        StudentDetails a = new StudentDetails();
+        System.out.println(a.name);
+        System.out.println(a.Age);
+        a.study();
+    }
+}
+ans:
+Logu
+24
+VCF
+
+model.2:
+
+abstract class Student{
+    String name="Logu";
+    int Age=24;
+    public abstract int study();
+}
+class StudentDetails extends Student{
+    int year=2000;
+    public int study() {
+        // System.out.println("VCF");
+        int one =10;
+        int two=11;
+        return one;
+    }
+}
+ class Main {
+    public static void main(String[] args) {
+        StudentDetails a = new StudentDetails();
+        System.out.println(a.name);
+        System.out.println(a.Age);
+        // a.study();
+        int number = a.study();
+        System.out.println(number);
+    }
+}
+ans:
+Logu
+24
+10
+
+model.3:
+abstract class Bike{  
+  abstract void run();  
+}  
+class Main extends Bike{  
+void run(){System.out.println("running safely");}  
+public static void main(String args[]){  
+ Bike obj = new Main();  
+ obj.run();  
+}  
+} 
+ans:
+running safely
+
+model.4:
+
+abstract class Bike{
+    String Name="plu";
+    int Year = 4;
+    abstract void eng();
+}
+
+class Hero extends Bike{
+    void eng(){
+        System.out.print("Speed:70");
+    }
+}
+class Mt extends Bike{
+    void eng(){
+        System.out.println("Speed:170");
+    }
+}
+class Main{  
+public static void main(String args[]){  
+Bike speedLeavel=new Mt(); 
+Bike speed=new Hero();
+speedLeavel.eng();  
+speed.eng();
+}  
+}
+
+ans:
+speed:70
+speed:170

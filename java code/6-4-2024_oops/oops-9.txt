@@ -1,0 +1,132 @@
+/******************************************************************************
+
+Create a Java program to represent a class hierarchy for employees in a company.
+Define a base class "Employee" with subclasses "Manager," "Developer," and "Programmer".
+Include properties such as name, address, salary, and job title.
+Implement methods for calculating bonuses, generating performance reports, and managing projects.
+
+*******************************************************************************/
+class Employee{
+    private String name;
+    private String address;
+    private double salary;
+    private String job;
+    
+    public Employee(String name,String address,double salary,String job){
+        this.name=name;
+        this.address=address;
+        this.salary=salary;
+        this.job=job;
+    }
+    public String getName(){
+        return name;
+    }
+    public String getAddress(){
+        return address;
+    }
+    public double getSalary(){
+        return salary;
+    }
+    public double calculateBonus() {
+        return 0.0;
+    }
+
+    public String generatePerformanceReport() {
+        return "No performance report available.";
+    }
+}
+class Manager extends Employee {
+    private int numberOfSubordinates;
+
+    public Manager(String name, String address, double salary, String jobTitle, int numberOfSubordinates) {
+        super(name, address, salary, jobTitle);
+        this.numberOfSubordinates = numberOfSubordinates;
+    }
+
+    public int getNumberOfSubordinates() {
+        return numberOfSubordinates;
+    }
+
+    public double calculateBonus() {
+        return getSalary() * 0.15;
+    }
+
+    public String generatePerformanceReport(){
+        return "Performance report for Manager " + getName() + ": Excellent";
+    }
+
+    public void manageProject() {
+        System.out.println("Manager " + getName() + " is managing a project.");
+    }
+}
+
+class Developer extends Employee {
+    private String programmingLanguage;
+
+    public Developer(String name, String address, double salary, String jobTitle, String programmingLanguage) {
+        super(name, address, salary, jobTitle);
+        this.programmingLanguage = programmingLanguage;
+    }
+
+    public String getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    public double calculateBonus() {
+        return getSalary() * 0.10;
+    }
+
+    public String generatePerformanceReport() {
+        return "Performance report for Developer " + getName() + ": Good";
+    }
+
+    public void writeCode() {
+        System.out.println("Developer " + getName() + " is writing code in " + programmingLanguage);
+    }
+}
+
+class Programmer extends Employee {
+    private String programming;
+
+    public Programmer(String name, String address, double salary, String jobTitle, String programming) {
+        super(name, address, salary, jobTitle);
+        this.programming = programming;
+    }
+
+    public String getProgramming() {
+        return programming;
+    }
+
+    public double calculateBonus() {
+        return getSalary() * 0.10;
+    }
+
+    public String generatePerformanceReport() {
+        return "Performance report for Developer " + getName() + ": Good";
+    }
+
+    public void writeCodes() {
+        System.out.println("Developer " + getName() + " is writing code in " + programming);
+    }
+}
+
+public class Main{
+	public static void main(String[] args) {
+	    
+          Manager manager = new Manager("Loganathan", "1 ABC St", 180000.0, "Manager", 5);
+          Developer developer = new Developer("Achudha","2 DEF st",190000.0,"Java","FullStack Developer");
+          Programmer programmer = new Programmer("Javith","3 DEF st",110000.0,"python","FullStack Developer");
+        
+          System.out.println("Manager's Bonus: $" + manager.calculateBonus());
+          System.out.println("Developer Bonus: $" + developer.calculateBonus());
+          System.out.println("Programmer Bonus: $" +programmer.calculateBonus());
+          
+          System.out.println(manager.generatePerformanceReport());
+          System.out.println(developer.generatePerformanceReport());
+          System.out.println(programmer.generatePerformanceReport());
+          
+          manager.manageProject();
+          developer.writeCode();
+          programmer.writeCodes();
+	}
+}

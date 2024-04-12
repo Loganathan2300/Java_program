@@ -1,0 +1,123 @@
+DATATYPE:
+
+1.String datatype:
+
+method:1
+class datatype {
+    public static void main(String[] args) {
+        String Father = "Velumani",Son = "Loganathan";
+        System.out.println(Son+" "+Father);
+    }
+}
+
+method:2
+class datatype {
+    public static void main(String[] args) {
+        String Father = "Velumani";
+        String Son = "Loganathan";
+        System.out.println(Son+" "+Father);
+    }
+}
+method:3
+class datatype  {
+    public static void main(String[] args) {
+        String Son = "Loganathan";
+        System.out.println("This is "+Son);
+    }
+}
+
+2.Int datatype:
+
+method:1
+class datatype  {
+    public static void main(String[] args) {
+        int a=12,b=8,c=10;
+        System.out.println(a+b+c);
+    }
+}
+
+method:2
+class datatype  {
+    public static void main(String[] args) {
+        int a=12;
+        int b=8;
+        int c=10;
+        System.out.println(a+b+c);
+    }
+}
+method:3
+class datatype  {
+    public static void main(String[] args) {
+       int a=34;
+        System.out.println(a+=a);   //output 68
+    }
+}
+method:4
+class datatype  {
+    public static void main(String[] args) {
+       int x, y, z;
+        x = y = z = 50;
+        System.out.print(x+" "+y+" "+z);
+    }
+}
+3.Flot datatype:
+
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       float myFloatNum = 5.99f;
+       
+        System.out.print(myFloatNum);
+    }
+}
+
+model:2
+
+4.char_datatype:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       char myLetter = 'D'; 
+        System.out.print(myLetter);
+    }
+}
+
+5.Boolean_datatype:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       boolean myBool = true;
+       
+        System.out.print(myBool);
+    }
+}
+5.long datatype:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       long myBool = 345;
+       int number = 456;
+       
+        System.out.print(myBool+number);
+    }
+}
+6.short datatype:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       short myBool = 345;
+       int number = 456;
+       
+        System.out.print(myBool+number);
+    }
+}
+7.byte datatype:
+model:1
+class datatype  {
+    public static void main(String[] args) {
+       byte myBool = 67;
+       int number = 11;
+       
+        System.out.print(myBool+number);
+    }
+}

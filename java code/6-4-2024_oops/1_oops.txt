@@ -1,0 +1,44 @@
+/******************************************************************************
+
+Create a Java program to define a class named "Student" with the following
+attributes: name, grade, and courses.
+Implement methods to add a course and remove a course from the student's list of courses.
+
+*******************************************************************************/
+import java.util.Arrays;
+
+public class Student{
+    String name ="Vijay";
+    String grade = "A";
+    String[] courses ={"B.com","MBA","BCA"};
+    
+    public <T> T[] addCourse(T[] courses,T course){
+      T[] array = Arrays.copyOf(courses, courses.length + 1);
+      array[courses.length] = course;
+      return array;
+    }
+    
+    public String[] removeCourse(String[] course){
+      String[] arr_new = new String[course.length-1];
+        int j=3;
+        for(int i=0, k=0;i<course.length;i++){
+            if(i!=j){
+                arr_new[k]=course[i];
+                k++;
+            }
+        }
+        return arr_new;
+    }
+    
+	public static void main(String[] args) {
+		Student myObj=new Student();
+		String[] output=myObj.addCourse(myObj.courses,"name");
+		for(int i=0;i<output.length;i++){
+		   System.out.println("Add the array Value :"+output[i]);
+		}
+		String[] output1=myObj.removeCourse(output);
+		for(int i=0;i<output1.length;i++){
+		   System.out.println("Remove the value :"+output1[i]);
+		}
+	}
+}

@@ -1,0 +1,38 @@
+/******************************************************************************
+
+Write a Java program to create an abstract class Instrument with abstract methods play() and tune().
+Create subclasses for Glockenspiel and Violin that extend the Instrument class and implement the 
+respective methods to play and tune each instrument.
+
+*******************************************************************************/
+abstract class Instrument{
+    public abstract void play();
+    public abstract void tune();
+}
+class Glockenspiel extends Instrument{
+    public void  play(){
+        System.out.println("Glockenspiel: This player are Cricket player");
+    }
+    public void tune(){
+        System.out.println("Glockenspiel: Tuning the metal bars to the correct pitch.");
+    }
+}
+class Violin extends Instrument{
+    public void  play(){
+        System.out.println("Violin: This player are Kabadi player");
+    }
+    public void tune(){
+        System.out.println("Violin: Tuning the metal bars to the correct pitch.");
+    }
+}
+public class Main{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+        Glockenspiel glockenspiel=new Glockenspiel();
+        glockenspiel.play();
+        glockenspiel.tune();
+        Violin violin=new Violin();
+        violin.play();
+        violin.tune();
+	}
+}

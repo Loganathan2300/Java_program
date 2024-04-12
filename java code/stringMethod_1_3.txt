@@ -1,0 +1,122 @@
+String method:
+1.charAt:
+--------
+method.1:
+class HelloWorld {
+    public static void main(String[] args) {
+        String name="Logu";
+        
+        System.out.println(name.charAt(3));
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="Logu";
+        char a = name.charAt(2);
+        System.out.println(a);
+    }
+}
+
+2.length:
+----------
+method.1:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="Loganathan";
+        int a=name.length();
+        System.out.println(a);
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="Loganathan";
+        System.out.println(name.length());
+    }
+}
+3.upeercase:
+method.1:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="Logu";
+        String a=name.toUpperCase();
+        System.out.println(a);
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="Logu";
+        System.out.println(name.toUpperCase());
+    }
+}
+4.lowercase:
+method.1:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="LOGANATHAN";
+        System.out.println(name.toLowerCase());
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="LOGANATHAN";
+        String a=name.toLowerCase();
+        System.out.println(a);
+    }
+}
+5.indexof:
+method.1:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="my world is Aarav";
+        System.out.println(name.indexOf("Aarav"));
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="my world is Aarav";
+        int a=name.indexOf("Aarav");
+        System.out.println(a);
+    }
+}
+method.3:
+public class Main {
+  public static void main(String[] args) {
+    String myStr = "Hello planet earth,you are a great planet";
+    int a=myStr.indexOf("p",8);
+    System.out.println(myStr.indexOf("p", 7));
+  }
+}
+
+class stringMethod {
+    public static void main(String[] args) {
+        String name="my world is aarave world";
+         int a=name.indexOf("world",5);
+         int b=name.indexOf("world");
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+6.cancat:
+method.1:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="my world is Aarav";
+        String nameUser="logu";
+        String a=name.concat(nameUser);
+        System.out.println(a);
+    }
+}
+method.2:
+class stringMethod {
+    public static void main(String[] args) {
+        String name="my world is Aarav";
+        String nameUser="logu";
+        System.out.println(name.concat(nameUser));
+    }
+}
+7.

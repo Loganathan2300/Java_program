@@ -1,0 +1,37 @@
+1.constuctors
+
+model.1:
+public class Main {
+  int modelYear;
+  String modelName;
+
+  public Main(int year, String name) {
+    modelYear = year;
+    modelName = name;
+  }
+
+  public static void main(String[] args) {
+    Main myCar = new Main(2, "LOGU");
+    System.out.println(myCar.modelYear + " " + myCar.modelName);
+  }
+}
+ans:
+2 LOGU
+
+model.2:
+public class Main {
+  int x;
+
+  public Main(int y) {
+    x = y;
+  }
+
+  public static void main(String[] args) {
+    Main myObj = new Main(2);
+    System.out.println(myObj.x);
+  }
+}
+ans:
+2
+
+model.3:

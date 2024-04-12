@@ -1,0 +1,8 @@
+1].review of react sandy anna:
+    Arrow Function need to use
+    naming need to be proper
+    UI need to be proper and pagination should not change the position it will be fixed
+    visible page need to add
+    add no data content for search result failed
+ 
+2].

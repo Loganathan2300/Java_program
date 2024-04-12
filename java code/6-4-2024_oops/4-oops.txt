@@ -1,0 +1,62 @@
+/******************************************************************************
+Write a Java program to create an interface called "Sortable" with a method sort()
+that sorts an array of integers in ascending order. Implement two classes, "BubbleSort" and "SelectionSort,"
+that implement the Sortable interface and provide their own sorting algorithms.
+*******************************************************************************/
+interface Sortable{
+    public void sort(int[] arg);
+}
+
+class BubbleSort implements Sortable{
+    public void sort(int[]arg){
+        // System.out.println("print the value"+arg);
+        int n = arg.length -1;
+        for(int i=0;i<=n;i++){
+            for(int k=0;k<n -i -1;k++){
+                if(arg[k]>arg[k+1]){
+                    int temp = arg[k];
+                    arg[k] = arg[k + 1];
+                    arg[k + 1] = temp;
+                }
+            }
+        }
+    }
+}
+
+class SelectionSort implements Sortable{
+    public void sort(int[]arr){
+        int n = arr.length -1;
+        for (int i = 0; i < n; i++){
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+        }
+    }
+}
+public class Main{
+	public static void main(String[] args) {
+// 		System.out.println("Hello World");
+        int[] arr ={0,2,1,4,5,3,6};
+        Sortable myObj =new BubbleSort();
+        myObj.sort(arr);
+        System.out.print("BubbleSort Sort: ");
+        printable(arr);
+        
+        Sortable myObj1 =new SelectionSort();
+        myObj1.sort(arr);
+        System.out.print("Selection Sort: ");
+        printable(arr);
+	}
+	private static void printable(int[] arg){
+	    for(int num:arg){
+	        System.out.println(num);
+	    }
+	    System.out.println("");
+	}
+}

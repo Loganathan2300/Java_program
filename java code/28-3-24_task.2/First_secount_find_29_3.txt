@@ -1,0 +1,49 @@
+
+model.1:
+
+import java.util.Arrays;
+public class Main{
+    public static int firstLargest(int[] a,int total){
+        Arrays.sort(a);
+        return a[total-1]; 
+    }
+    public static int secoundLargest(int[] a,int total){
+        Arrays.sort(a);
+        return a[total-2]; 
+    }
+	public static void main(String[] args) {
+	    int b[]={44,66,99,77,33,22,55};
+		System.out.println(Main.firstLargest(b,7));
+		System.out.println(Main.secoundLargest(b,7));
+	}
+}
+
+ans:
+99
+77
+
+
+model.2:
+
+public class Main {
+   public static void main(String args[]){
+      int temp, size;
+      int array[] = {10, 20, 25, 63, 96, 57};
+      size = array.length;
+      for(int i = 0; i<size; i++ ){
+         for(int j = i+1; j<size; j++){
+            if(array[i]>array[j]){
+              temp = array[i];
+              array[i] = array[j];
+              array[j] = temp;
+            }
+         }
+      }
+      System.out.println("Third First largest number is: "+array[size-1]);
+      System.out.print("Third second largest number is: "+array[size-2]);
+   }
+}
+
+ans:
+Third First largest number is: 96
+Third second largest number is: 63

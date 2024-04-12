@@ -1,0 +1,72 @@
+1.Find the duplicate array:
+
+public class Main
+{
+	public static void main(String[] args) {
+        int[]a={1,2,3,3,4,5,5,4};
+        for(int i=0;i<a.length-1;i++){
+            for(int j=i+1;j<a.length;j++){
+                if((a[i]==a[j] && (i != j))){
+                    System.out.println("Duplicate Number:"+a[j]);
+                }
+            }
+        }
+	}
+}
+ans:
+Duplicate Number:3
+Duplicate Number:4
+Duplicate Number:5
+====================================
+
+2.Remove the duplicate:
+
+model.1:
+public class RemoveDuplicateInArrayExample {
+    public static int removeDuplicateElements(int[] arr, int n) {
+        if (n == 0 || n == 1) {
+            return n;
+        }
+        int[] temp = new int[n];
+        int j = 0;
+        for (int i = 0; i < n - 1; i++) {
+            if (arr[i] != arr[i + 1]) {
+                temp[j++] = arr[i];
+            }
+        }
+        temp[j++] = arr[n - 1];
+        // Changing original array
+        for (int i = 0; i < j; i++) {
+            arr[i] = temp[i];
+        }
+        return j;
+    }
+
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 20, 30, 30, 40, 50, 50};
+        int length = arr.length;
+        length = removeDuplicateElements(arr, length);
+        // Printing array elements
+        for (int i = 0; i < length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+======================================================================
+model.2:
+    public class Main{
+	public static void main(String[] args) {
+        int []a={1,2,3,4,5,5,4,3};
+        int visit=-1;
+        for(int i=0; i<a.length; i++){
+            if(a[i]!=-1){ 
+                for(int j=i+1; j<a.length; j++){
+        	       if((a[i]==a[j])){
+        	            a[j]=visit;
+        	        }
+                }
+           	System.out.println(a[i]);
+	         }
+	    }
+	    
+	}}

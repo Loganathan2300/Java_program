@@ -1,0 +1,131 @@
+Switch method :
+model 1:
+class HelloWorld {
+    public static void main(String[] args) {
+         int day = 4;
+    switch (day) {
+      case 1:
+        System.out.println("Monday");
+        break;
+      case 2:
+        System.out.println("Tuesday");
+        break;
+      case 3:
+        System.out.println("Wednesday");
+        break;
+      case 4:
+        System.out.println("Thursday");
+        break;
+      case 5:
+        System.out.println("Friday");
+        break;
+      case 6:
+        System.out.println("Saturday");
+        break;
+      case 7:
+        System.out.println("Sunday");
+        break;
+      default:
+        System.out.println("not a day");
+    }
+    }
+}
+model 2:
+class patten1 {
+    public static void main(String[] args) {
+        String a="logu";
+        switch (a) {
+            case "lo":
+                System.out.print("lo");
+                break;
+            case "logu":
+                System.out.print(a.toUpperCase());
+                break;
+            default:
+                System.out.print("not a input");
+        }
+    }
+}
+ans:
+LOGU
+model.3:
+class patten1 {
+    public static void main(String[] args) {
+        char a='s';
+        switch (a) {
+            case 'o':
+                System.out.print("lo");
+                break;
+            case 'l':
+                System.out.print("logu");
+                break;
+            case 's':
+                System.out.print("loguS");
+                break;
+            default:
+                System.out.print("not a input");
+        }
+    }
+}
+model.4:
+public class switchExampleMonth{
+    public static void main(String[] arg){
+        int day=2;
+        String a = "";
+        switch(day){
+            case 1:
+                a="jan-1";
+                break;
+            case 2:
+                a="feb-2'logu bdy'";
+                break;
+            case 3:
+                a="march-3";
+                break;
+            case 4:
+                a="april-4";
+                break;
+            case 5:
+                a="may-5";
+                break;
+            default:
+              System.out.print("not a month");
+        }
+        
+    }
+}
+ans:
+feb-2'logu bdy'
+model.5:
+public class switchExampleMonth{
+    public static void main(String[] arg){
+        int day=2;
+        String a = "";
+        switch(day){
+            case 1:
+                a="jan-1";
+                break;
+            case 2:
+                a="feb-2'logu bdy'";
+                break;
+            case 3:
+                a="march-3";
+                break;
+            case 4:
+                a="april-4";
+                break;
+            case 5:
+                a="may-5";
+                break;
+            default:
+              System.out.print("not a month");
+        }
+        if(day==day){
+        System.out.print(a);
+        }else{
+            System.out.print("not a month");
+        }
+    }
+}
+ans:
+feb-2'logu bdy'

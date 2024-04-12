@@ -1,0 +1,50 @@
+vowels in char model:
+model.1:
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner myObj=new Scanner(System.in);
+	    System.out.println("Enter the Charater:");
+	    char ch =myObj.next().charAt(0);
+            if(ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u' ){
+                System.out.println(ch+":"+"this is vowel");
+            }else{
+                System.out.println(ch+":"+"this is not a vowel");
+            }
+	}
+}
+
+model.2:
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner myObj=new Scanner(System.in);
+	    System.out.println("Enter the Charater:");
+	    char ch =myObj.next().charAt(0);
+            switch(ch){
+                case 'a':
+                    System.out.println("this is vowels");
+                    break;
+                case 'e':
+                    System.out.println("this is vowels");
+                    break;
+                case 'i':
+                    System.out.println("this is vowels");
+                    break;
+                case 'o':
+                    System.out.println("this is vowels");
+                    break;
+                case 'u':
+                    System.out.println("this is vowels");
+                    break;
+                default:
+                    System.out.println("this is not a vowels");
+                    
+            }
+	}
+}
+
+

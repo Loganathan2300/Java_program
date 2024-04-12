@@ -1,0 +1,80 @@
+for loop (square patten)
+model.1:
+class patten1 {
+    public static void main(String[] args) {
+        for (int i=1;i<=4;i++){
+            for (int j=0;j<4;j++){
+                System.out.print("k");
+            }
+              System.out.println(" ");
+        }
+    }
+}
+ans:
+kkkk 
+kkkk 
+kkkk 
+kkkk 
+
+
+rough use code:
+class patten2 {
+    public static void main(String[] args) {
+                for(int k=4;k>=1;k--){
+                    for(int i=5;i>=k;i--){
+                System.out.print("d");
+            }
+                    for(int l=1;l<=k;l++){
+                    System.out.print(k);
+                    }
+                    System.out.println(" ");
+                }
+    }
+}
+model.2:
+class patten1 {
+    public static void main(String[] args) {
+        for (int i=1;i<=5;i++){
+            for(int k=5;k>=i;k--){
+                System.out.print(" ");
+            }
+            for (int j=1;j<=i;j++){
+                  System.out.print(i+" ");
+                }
+              System.out.println(" ");
+        }
+        for(int k=4;k>=1;k--){
+                    for(int i=5;i>=k;i--){
+                System.out.print(" ");
+            }
+                    for(int l=1;l<=k;l++){
+                    System.out.print(k+" ");
+                    }
+                    System.out.println(" ");
+                }
+    }
+}
+model.3:
+class patten1 {
+    public static void main(String[] args) {
+        int o=5;
+        for (int i=1;i<=o;i++){
+            for(int k=1;k<=o-i;k++){
+                System.out.print(" ");
+            }
+            for (int j=1;j<=i;j++){
+                  System.out.print(i+" ");
+                }
+              System.out.println();
+        }
+        for(int k=4;k>=1;k--){
+                    for(int i=4;i>=k;i--){
+                System.out.print(" ");
+            }
+                    for(int l=1;l<=k;l++){
+                    System.out.print(k+" ");
+                    }
+                    System.out.println(" ");
+                }
+    }
+}
