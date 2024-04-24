@@ -1,0 +1,141 @@
+/******************************************************************************
+
+Write a Java program to create a banking system with three classes -
+Bank, Account, SavingsAccount, and CurrentAccount.
+The bank should have a list of accounts and methods for adding them.
+Accounts should be an interface with methods to deposit, withdraw, calculate interest, and view balances.
+SavingsAccount and CurrentAccount should implement the Account interface and have their own unique methods.
+
+*******************************************************************************/
+interface Accounts{
+  public void deposit ();
+  public void withdraw ();
+  public void calculateInterest ();
+  public void viewBalance ();
+}
+class Account implements Accounts{
+  private double depositAmount;
+  private double withdrawAmunt;
+  private double interest;
+  double balances;
+
+  public Account (double depositAmount, double withdrawAmunt, double interest){
+	this.depositAmount = depositAmount;
+	this.withdrawAmunt = withdrawAmunt;
+	this.interest = interest;
+  }
+
+  public void deposit (){
+	System.out.println ("Deposit Amount : "+depositAmount);
+  }
+
+  public void withdraw (){
+	if (depositAmount > withdrawAmunt){
+		double total = depositAmount - withdrawAmunt;
+		System.out.println ("balances Amount : "+total);
+	  }
+	else{
+		System.out.println (withdrawAmunt + "Not have a money");
+	  }
+  }
+
+  public void calculateInterest (){
+	balances = depositAmount + interest;
+	System.out.println ("Interest Calculation : "+balances);
+  }
+
+  public void viewBalance (){
+	System.out.println ("Balance Amount : "+balances);
+  }
+}
+class SavingsAccount implements Accounts{
+     private double depositAmount;
+     private double withdrawAmunt;
+     private double interest;
+     double balances;
+
+  public SavingsAccount (double depositAmount, double withdrawAmunt, double interest){
+	this.depositAmount = depositAmount;
+	this.withdrawAmunt = withdrawAmunt;
+	this.interest = interest;
+  }
+
+  public void deposit (){
+	System.out.println ("Savings Account Deposit Amount : "+depositAmount);
+  }
+
+  public void withdraw (){
+	if (depositAmount > withdrawAmunt){
+		double total = depositAmount - withdrawAmunt;
+		System.out.println ("SavingsAccount balances Amount : "+total);
+	  }
+	else{
+		System.out.println (withdrawAmunt + "Not have a money");
+	  }
+  }
+
+  public void calculateInterest (){
+	balances = depositAmount + interest;
+	System.out.println ("Interest Calculation on SavingsAccount : "+balances);
+  }
+
+  public void viewBalance (){
+	System.out.println ("SavingsAccount Balance Amount : "+balances);
+  }
+}
+class CurrentAccount implements Accounts{
+     private double depositAmount;
+     private double withdrawAmunt;
+     private double interest;
+     double balances;
+
+  public CurrentAccount (double depositAmount, double withdrawAmunt, double interest){
+	this.depositAmount = depositAmount;
+	this.withdrawAmunt = withdrawAmunt;
+	this.interest = interest;
+  }
+
+  public void deposit (){
+	System.out.println ("CurrentAccount Deposit Amount : "+depositAmount);
+  }
+
+  public void withdraw (){
+	if (depositAmount > withdrawAmunt){
+		double total = depositAmount - withdrawAmunt;
+		System.out.println ("CurrentAccount balances Amount : "+total);
+	  }
+	else{
+		System.out.println (withdrawAmunt + "Not have a money");
+	  }
+  }
+
+  public void calculateInterest (){
+	balances = depositAmount + interest;
+	System.out.println ("Interest Calculation on CurrentAccount : "+balances);
+  }
+
+  public void viewBalance (){
+	System.out.println ("CurrentAccount Balance Amount : "+balances);
+  }
+}
+public class Main{
+  public static void main (String[]args){
+	Account account = new Account (20000.00, 5000.00, 1.7);
+	  account.deposit ();
+	  account.withdraw ();
+	  account.calculateInterest ();
+	  account.viewBalance ();
+	  System.out.println("SavingsAccount Openning : ");
+	SavingsAccount savingsAccount = new SavingsAccount (120000.00, 15000.00, 0.7);
+	  savingsAccount.deposit ();
+	  savingsAccount.withdraw ();
+	  savingsAccount.calculateInterest ();
+	  savingsAccount.viewBalance ();
+	   System.out.println("CurrentAccount Openening : ");
+	CurrentAccount currentAccount = new CurrentAccount (11200000.00, 100000.00, 3.7);
+	  currentAccount.deposit ();
+	  currentAccount.withdraw ();
+	  currentAccount.calculateInterest ();
+	  currentAccount.viewBalance ();
+  }
+}

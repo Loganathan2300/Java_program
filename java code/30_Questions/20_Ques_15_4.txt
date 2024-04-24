@@ -1,0 +1,28 @@
+/******************************************************************************
+Find the smallest number among three numbers
+Test Data:
+Input the first number: 25
+Input the Second number: 37
+Input the third number: 29
+Expected Output:
+The smallest value is 25.0
+
+
+*******************************************************************************/
+
+public class Main {
+    public static void main(String[] args) {
+        int a = 25, b = 37, c = 29;
+ 
+    if (a <= b && a <= c){
+        System.out.println( a + " is the smallest");
+ 
+    }else if (b <= a && b <= c){
+        System.out.println( b + " is the smallest");
+ 
+   }else{
+        System.out.println( c + " is the smallest");
+    }
+    
+}
+}

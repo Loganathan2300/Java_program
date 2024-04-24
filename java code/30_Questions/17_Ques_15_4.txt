@@ -1,0 +1,19 @@
+/******************************************************************************
+
+A string is created by using another string's letters. Letters are case sensitive. Write a Java program that
+checks the letters of the second string are present in the first string. Return true otherwise false.
+
+*******************************************************************************/
+
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+	  Scanner sc = new Scanner(System.in);
+	  System.out.print("Enter the letter : ");
+	  String str1 = sc.next();
+	  System.out.print("Find the word : ");
+	  String str2 = sc.next();
+	  System.out.println(str1.contains(str2));
+	}
+}
+

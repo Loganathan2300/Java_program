@@ -1,0 +1,16 @@
+/******************************************************************************
+Write a program to check whether given arrays are equal or not.
+
+*******************************************************************************/
+import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int[] array = {1, 2, 3, 4, 5,6,7};
+        int[] arrays = {1, 2, 3, 4, 5,6};
+        if(Arrays.toString(array).equals(Arrays.toString(arrays))){
+            System.out.println(" the array list are equal");
+        }else{
+            System.out.println("the array list are Not equal");
+        }
+    }
+}

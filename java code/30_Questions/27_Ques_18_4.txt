@@ -1,0 +1,159 @@
+/******************************************************************************
+
+Write a Java program to create a class called "School" with attributes for students, teachers, and classes,
+and methods to add and remove students and teachers, and to create classes.
+
+*******************************************************************************/
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+class Movie{
+   private ArrayList < Student > students;
+   private ArrayList <Teacher> teachers;
+   private ArrayList <Classe> classes;
+
+  public Movie(){
+    this.students = new ArrayList < Student >();
+    this.teachers = new ArrayList <Teacher>();
+    this.classes = new ArrayList <Classe>();
+  }
+
+  public void addStudent(Student students){
+    this.students.add(students);
+  }
+  public void removeStudent(Student students) {
+    this.students.remove(students);
+  }
+  public ArrayList < Student > getStudent(){
+    return this.students;
+  }
+  
+  public void addTeacher(Teacher teachers){
+      this.teachers.add(teachers);
+  }
+  public void removeTeacher(Teacher teachers){
+      this.teachers.remove(teachers);
+  }
+  public ArrayList <Teacher> getTeacher(){
+      return this.teachers;
+  }
+  
+  public void addClasses(Classe classes){
+      this.classes.add(classes);
+  }
+  public void removeClasses(Classe classes){
+      this.classes.remove(classes);
+  }
+  public ArrayList <Classe> getClasses(){
+      return this.classes;
+  }
+  
+}
+
+class Student{
+  private String name;
+  private int age;
+
+  public Student(String name, int age){
+    this.name = name;
+    this.age = age;
+  }
+
+  public String getName(){
+    return name;
+  }
+
+  public int getAge(){
+    return age;
+  }
+}
+class Teacher{
+    private String name;
+    private String subject;
+    
+    public Teacher(String name,String subject){
+        this.name=name;
+        this.subject=subject;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    public String getSubject(){
+        return subject;
+    }
+}
+class Classe{
+    private int classes;
+
+    public Classe(int classes){
+        this.classes=classes;
+    }
+    
+    public int getClasses(){
+        return classes;
+    }
+}
+public class Main{
+  public static void main(String[] args){
+      
+    Movie movie1 = new Movie();
+    //Student class 
+    Student review1 = new Student("Loganathan",24);
+    Student review2 = new Student("Aarav",6);
+    Student review3 = new Student("Krishanth",3);
+    Student review4 = new Student("Thisanth",02);
+    Student review5 = new Student("Swathi",22);
+
+    movie1.addStudent(review1);
+    movie1.addStudent(review2);
+    movie1.addStudent(review3);
+    movie1.addStudent(review4);
+    movie1.addStudent(review5);
+    
+    movie1.removeStudent(review5);
+    
+    for (Student students: movie1.getStudent()){
+      System.out.println("Student Name : "+students.getName() +"\n"+ "Student age is : " + students.getAge()+"\n");
+    }
+    
+    System.out.println(" ");
+    //teachers class:
+    Teacher teacher1 = new Teacher("Malathi","Account");
+    Teacher teacher2 = new Teacher("kayalveli","Css");
+    Teacher teacher3 = new Teacher("maha","C++");
+    Teacher teacher4 = new Teacher("swathiy","Html");
+    Teacher teacher5 = new Teacher("abi","Eco");
+    
+    movie1.addTeacher(teacher1);
+    movie1.addTeacher(teacher2);
+    movie1.addTeacher(teacher3);
+    movie1.addTeacher(teacher4);
+    movie1.addTeacher(teacher5);
+    
+    movie1.removeTeacher(teacher5);
+    
+    for(Teacher teachers:movie1.getTeacher()){
+        System.out.println("Teacher Name : "+teachers.getName()+"\nSubject Name : "+teachers.getSubject()+"\n");
+    }
+    //Classes class:
+    Classe classes1 = new Classe(12);
+    Classe classes2 = new Classe(1);
+    Classe classes3 = new Classe(2);
+    Classe classes4 = new Classe(3);
+    Classe classes5 = new Classe(4);
+    
+    movie1.addClasses(classes1);
+    movie1.addClasses(classes2);
+    movie1.addClasses(classes3);
+    movie1.addClasses(classes4);
+    movie1.addClasses(classes5);
+    
+    movie1.removeClasses(classes5);
+    
+    for(Classe classes:movie1.getClasses()){
+        System.out.println("Classes Name : "+classes.getClasses());
+    }
+  }
+}

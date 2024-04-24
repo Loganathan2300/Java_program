@@ -1,0 +1,76 @@
+/******************************************************************************
+
+Write a Java program to create a base class Sports with a method called play().
+Create three subclasses: Football, Basketball, and Rugby.
+Override the play() method in each subclass to play a specific statement for each sport.
+
+*******************************************************************************/
+abstract class Sport{
+    public abstract void  play();
+}
+class Football extends Sport{
+    public void play(){
+       System.out.println("babu played football");
+    }
+}
+class Basketball extends Sport{
+    public void play(){
+        System.out.println("kavin played basketball");
+    }
+}
+class Rugby extends Sport{
+    public void play(){
+        System.out.println("kavin played rugby");
+    }
+}
+public class Main{
+	public static void main(String[] args) {
+        Football football=new Football();
+        Basketball basketball=new Basketball();
+        Rugby rugby=new Rugby();
+        football.play();
+        basketball.play();
+        rugby.play();
+	}
+}
+
+========================================================================
+/******************************************************************************
+
+Write a Java program to create a base class Sports with a method called play().
+Create three subclasses: Football, Basketball, and Rugby.
+Override the play() method in each subclass to play a specific statement for each sport.
+
+*******************************************************************************/
+class Sport{
+    public void play(){
+        System.out.println("players list : ");
+    }
+}
+class Football extends Sport{
+    public void play(){
+       System.out.println("babu played football");
+    }
+}
+class Basketball extends Sport{
+    public void play(){
+        System.out.println("kavin played basketball");
+    }
+}
+class Rugby extends Sport{
+    public void play(){
+        System.out.println("kavin played rugby");
+    }
+}
+public class Main{
+	public static void main(String[] args) {
+	    Sport sport=new Sport();
+        Football football=new Football();
+        Basketball basketball=new Basketball();
+        Rugby rugby=new Rugby();
+        sport.play();
+        football.play();
+        basketball.play();
+        rugby.play();
+	}
+}

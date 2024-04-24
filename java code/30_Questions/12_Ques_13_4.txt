@@ -1,0 +1,42 @@
+/******************************************************************************
+
+Write a Java program to create a base class Vehicle with methods startEngine() and stopEngine().
+Create two subclasses Car and Motorcycle.
+Override the startEngine() and stopEngine() methods in each subclass to start and stop the engines differently.
+
+*******************************************************************************/
+
+abstract class Vehicle{
+    public abstract void startEngine();
+    public abstract void stopEngine();
+}
+
+class Car extends Vehicle{
+    public void startEngine(){
+        System.out.println("Car engine started with a key.");
+    }
+    public void stopEngine(){
+        System.out.println("Car engine stopped when the key was turned off.");
+    }
+} 
+
+class Motorcycle extends Vehicle{
+    public void startEngine(){
+        System.out.println("Motorcycle engine started with a key.");
+    }
+    public void stopEngine(){
+        System.out.println("Motorcycle engine stopped when the key was turned off.");
+    }
+} 
+
+public class Main{
+	public static void main(String[] args){
+        Vehicle car=new Car();
+        car.startEngine();
+        car.stopEngine();
+        System.out.println("next view to secound method : ");
+        Vehicle motorcycle=new Motorcycle();
+        motorcycle.startEngine();
+        motorcycle.stopEngine();
+	}
+}

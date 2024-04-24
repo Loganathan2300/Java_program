@@ -1,0 +1,39 @@
+/******************************************************************************
+
+Write a Java program to return the substring that is between the first and
+last appearance of the substring 'toast' in the given string, or return an empty string
+if the substring 'toast' does not exist.
+The given strings is: sweettoastbuttertoast
+The new string is: butter
+
+*******************************************************************************/
+// import java.util.*;
+
+public class Main{
+    public static void outPut(String str){
+        int len = str.length();
+        int st=0;
+        int end=0;
+        boolean trust= false;
+        if (len<=10){
+            System.out.println("");
+        }
+        for(int i=0 ;i<len -4 ;i++){
+            String temString = str.substring(i,i+5);
+            if(temString.equals("toast") && trust == true){
+                 end = i ;
+            }
+            if(temString.equals("toast") && trust == false){
+                 st = i + 5;
+                 trust = true; 
+            }
+        }
+        String resultString = str.substring(st,end);
+        System.out.println(resultString);
+    }
+	public static void main(String[] args) {
+		String str= "sweettoastbuttertoast";
+		outPut(str);
+	}
+}
+

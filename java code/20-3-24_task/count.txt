@@ -16,10 +16,8 @@ public class Main
 ============================
 
 import java.util.Scanner;  
-public class CountOccuranceOfChar1  
-{  
-public static void main(String args[])   
-{  
+public class CountOccuranceOfChar1{  
+public static void main(String args[]){  
 String str;  
 int i, len;  
 int counter[] = new int[256];  

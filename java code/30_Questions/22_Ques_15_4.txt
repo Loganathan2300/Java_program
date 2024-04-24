@@ -1,0 +1,55 @@
+/******************************************************************************
+
+Write a Java program to read a string and return it without the first two characters.
+Keep the first character if it is 'g' and keep the second character if it is 'h'.
+
+*******************************************************************************/
+import java.util.*;
+
+public class Main {
+
+    public String exceptFirstTwo(String stng){
+        int len = stng.length();
+        String temp = ""; 
+        for (int i = 0; i < len; i++){
+            if (i == 0 && stng.charAt(i) == 'g')
+                temp += 'g';
+            else if (i == 1 && stng.charAt(i) == 'h')
+                temp += 'h';
+            else if (i > 1)
+                temp += stng.charAt(i);
+        }
+        return temp;
+    }
+
+    public static void main(String[] args) {
+        Main m = new Main(); 
+        Scanner myObj=new Scanner(System.in);
+        System.out.print("The strings : ");
+        String str=myObj.nextLine();
+        System.out.println("The new string is: " + m.exceptFirstTwo(str));
+    }
+}
+
+
+=================================================================
+/******************************************************************************
+
+Write a Java program to read a string and return it without the first two characters.
+Keep the first character if it is 'g' and keep the second character if it is 'h'.
+
+*******************************************************************************/
+import java.util.Scanner;
+public class Main{
+	public static void main(String[] args) {
+	    Scanner myObj=new Scanner(System.in);
+		System.out.print("Enter the text : ");
+        String str = myObj.nextLine();
+        int n=str.length();
+        if(str.charAt(0) != 'g' && str.charAt(1) !='h'){
+                System.out.print(str.substring(2,n));
+        }else{
+            System.out.println(str);
+        }
+}
+}
