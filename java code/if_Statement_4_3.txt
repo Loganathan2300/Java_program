@@ -13,3 +13,28 @@ public class Main {
     }
   }
 }
+
+==================================================
+model:2
+
+import java.util.Scanner; 
+public class Main{
+	public static void main(String[] args) {
+	    Scanner age = new Scanner(System.in); 
+		System.out.print("Enter your age:");
+		int x= age.nextInt();
+		if(x>=70) {
+		System.out.println("eligible to vote but higher age");
+		}else if (x>=18) {
+		System.out.println("eligible to vote");
+		}else if(x<18) {
+		    if(x<=15){
+		        System.out.println("not eligible.waiting for few years");
+		    }else if(x<=16){
+		        System.out.println("not eligible.waiting for two years");
+		    }else if (x<=17){
+		        System.out.println("not eligible.waiting for one years");
+		    }
+		}
+	}
+}
