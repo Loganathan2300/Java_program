@@ -1,0 +1,33 @@
+/******************************************************************************
+Write a Java program to create a LinkedList of characters and add ten characters to it.
+Then, print all the characters in the LinkedList.
+*******************************************************************************/
+import java.util.List;
+import java.util.LinkedList;
+import java.util.Iterator;
+public class Collection_3{
+	public static void main(String[] args) {
+	    
+        List <Character> set=new LinkedList <Character>();
+        set.add('a');
+        set.add('b');
+        set.add('c');
+        set.add('d');
+        set.add('e');
+        set.add('f');
+        set.add('g');
+        System.out.println(set);
+        //Iterator the HashSet
+        Iterator itr=set.iterator();
+        System.out.println("while the HashSet : ");
+        //whileloop
+        while(itr.hasNext()){
+            System.out.println(itr.next());
+        }
+        //for loop
+        System.out.println("for loop : ");
+        for(char i:set){
+            System.out.println(i);
+        }
+	}
+}
